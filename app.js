@@ -6,20 +6,8 @@ const app = express();
 
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
 
-app.get("/api/tasks", async (req, res, next) => {
-  try {
-    res.send(await Task.findAll());
-  } catch (error) {
-    next(error);
-  }
-});
-
-app.get("/api/users", async (req, res, next) => {
-  try {
-    res.send(await User.findAll());
-  } catch (error) {
-    next(error);
-  }
-});
+//if using app.use, need a middleware like ("express").Router in the users or tasks routes file
+app.use("/api/tasks", require("./routes/tasks"));
+app.use("/api/users", require("./routes/users"));
 
 module.exports = app;
