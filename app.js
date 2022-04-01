@@ -4,6 +4,9 @@ const path = require("path");
 
 const app = express();
 
+// allows users to see stylesheet, also referenced in index.html
+app.use("/assets", express.static(path.join(__dirname, "assets")));
+
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
 
 //if using app.use, need a middleware like ("express").Router in the users or tasks routes file
