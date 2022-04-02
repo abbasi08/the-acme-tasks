@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
+app.use(express.json()); // looks at data and converts it to an obj
 
 // allows users to see stylesheet, also referenced in index.html
 app.use("/assets", express.static(path.join(__dirname, "assets")));

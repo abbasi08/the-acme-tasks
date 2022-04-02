@@ -18,9 +18,9 @@ const User = sequelize.define("user", {
   },
 });
 
-// either asociation will establishe foriegn key
+// either asociation will establish a foriegn key
 Task.belongsTo(User);
-User.hasMany(Task); // if using 'includes'
+User.hasMany(Task); // need hasMany if using 'includes'
 
 module.exports = {
   sequelize,
