@@ -7,6 +7,7 @@ app.use(express.json()); // looks at data and converts it to an obj
 
 // allows users to see stylesheet, also referenced in index.html
 app.use("/assets", express.static(path.join(__dirname, "assets")));
+app.use("/dist", express.static(path.join(__dirname, "dist")));
 
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
 
