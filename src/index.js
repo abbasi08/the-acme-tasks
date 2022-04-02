@@ -1,2 +1,7 @@
-console.log("Hello we used webpack");
 //webpack looks in this file
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+const root = document.querySelector("#root");
+ReactDOM.render(<hr />, root);
