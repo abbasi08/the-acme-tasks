@@ -9,19 +9,19 @@ const init = async () => {
   await sequelize.sync({ force: true });
 
   const [hannah, lauren, joshua, prof] = await Promise.all([
-    User.create({ firstName: "hannah" }),
-    User.create({ firstName: "lauren" }),
-    User.create({ firstName: "joshua" }),
-    User.create({ firstName: "prof" }),
+    User.create({ firstName: "Hannah" }),
+    User.create({ firstName: "Lauren" }),
+    User.create({ firstName: "Joshua" }),
+    User.create({ firstName: "Prof" }),
   ]);
 
   await Promise.all([
-    Task.create({ name: "answer questions", userId: prof.id }),
-    Task.create({ name: "go shopping", userId: hannah.id }),
-    Task.create({ name: "email mentors", userId: prof.id }),
-    Task.create({ name: "dance all night", userId: lauren.id }),
-    Task.create({ name: "do all the hw", userId: joshua.id }),
-    Task.create({ name: "make coffee", userId: prof.id }),
+    Task.create({ name: "Answer questions", userId: prof.id }),
+    Task.create({ name: "Go shopping", userId: hannah.id }),
+    Task.create({ name: "Email mentors", userId: prof.id }),
+    Task.create({ name: "Dance all night", userId: lauren.id }),
+    Task.create({ name: "Do all the hw", userId: joshua.id }),
+    Task.create({ name: "Make coffee", userId: prof.id }),
   ]);
 };
 

@@ -4,11 +4,11 @@ import { connect } from "react-redux";
 
 const Nav = ({ users, tasks }) => {
   return (
-    <div>
-      <Link to="/">Home </Link>
-      <Link to="/tasks">({tasks.length}) Tasks </Link>
+    <nav>
+      <Link to="/">Home</Link>
+      <Link to="/tasks">({tasks.length}) Tasks</Link>
       <Link to="/users">({users.length}) Users</Link>
-    </div>
+    </nav>
   );
 };
 
@@ -21,4 +21,4 @@ const mapState = (state) => {
 };
 
 export default connect(mapState)(Nav);
-//this is called when there's a change in the redux store
+//mapState is called when there's a change in the redux store

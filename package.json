@@ -6,19 +6,18 @@
   "scripts": {
     "build": "webpack",
     "build:dev": "webpack --watch --mode=development",
-    "start:dev": "nodemon server & npm run build:dev"
+    "start:dev": "nodemon server --ignore dist/ --ignore src/ & npm run build:dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "curl": "^0.1.4",
     "express": "^4.17.3",
     "pg": "^8.7.3",
-    "react-redux": "^7.2.8",
     "sequelize": "^6.17.0"
   },
   "devDependencies": {
+    "react-redux": "^7.2.8",
     "@babel/core": "^7.17.8",
     "@babel/preset-react": "^7.16.7",
     "axios": "^0.26.1",
