@@ -1,21 +1,6 @@
 import { createStore, combineReducers } from "redux";
-
-const tasksReducer = (state = [], action) => {
-  if (action.type === "SET_TASKS") {
-    return action.tasks;
-  }
-  if (action.type === "DELETE_TASK") {
-    state = state.filter((task) => task.id !== action.id);
-  }
-  return state;
-};
-
-const usersReducer = (state = [], action) => {
-  if (action.type === "SET_USERS") {
-    return action.users;
-  }
-  return state;
-};
+import tasksReducer from "./tasksReducer";
+import usersReducer from "./usersReducer";
 
 const reducer = combineReducers({
   tasks: tasksReducer,
