@@ -28,4 +28,12 @@ app.delete("/:id", async (req, res, next) => {
   }
 });
 
+// app.delete("/api/tasks/:id", (req, res, next) => {
+//   try {
+//     console.log("axios call made it?", req.params.id);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
+
 module.exports = app;
