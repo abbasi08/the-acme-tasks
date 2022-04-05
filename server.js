@@ -8,11 +8,12 @@ const init = async () => {
   console.log("Initializing database..");
   await sequelize.sync({ force: true });
 
-  const [hannah, lauren, joshua, prof] = await Promise.all([
+  const [hannah, lauren, joshua, prof, jonathan] = await Promise.all([
     User.create({ firstName: "Hannah" }),
     User.create({ firstName: "Lauren" }),
     User.create({ firstName: "Joshua" }),
     User.create({ firstName: "Prof" }),
+    User.create({ firstName: "Jonathan" }),
   ]);
 
   await Promise.all([

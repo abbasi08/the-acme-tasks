@@ -2,21 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-const Nav = ({ users, tasks }) => {
+const Nav = ({ users, tasks, usersWithoutTasks }) => {
   return (
     <nav>
       <Link to="/">Home</Link>
-      <Link to="/tasks">({tasks.length}) Tasks</Link>
-      <Link to="/users">({users.length}) Users</Link>
+      <Link to="/tasks">{tasks.length} Tasks</Link>
+      <Link to="/users">{users.length} Users</Link>
+      <Link to="/users/without-tasks">
+        {usersWithoutTasks.length} Users Without Tasks
+      </Link>
     </nav>
   );
 };
 
 const mapState = (state) => {
-  console.log(state);
+  const usersWithoutTasks = state.users.filter((user) => {
+    return state.tasks.filter((task) => task.userId === user.id).length === 0;
+  });
   return {
     tasks: state.tasks,
     users: state.users,
+    usersWithoutTasks,
   };
 };
 
