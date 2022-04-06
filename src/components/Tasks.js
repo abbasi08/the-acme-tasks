@@ -9,7 +9,7 @@ const Tasks = ({ users, tasks, destroy }) => {
         const user = users.find((user) => user.id === task.userId);
         return (
           <li key={task.id}>
-            {task.name} <button onClick={() => destroy(task.id)}>x</button>
+            <button onClick={() => destroy(task.id)}> x </button> {task.name}
             <p classID="smallDescribe">
               Assigned to: {user ? user.firstName : ""}
             </p>

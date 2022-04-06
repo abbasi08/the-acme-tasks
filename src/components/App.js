@@ -8,6 +8,7 @@ import Users from "./Users";
 import UsersWithoutTasks from "./UsersWithoutTasks";
 import Tasks from "./Tasks";
 import UserTasks from "./UserTasks";
+import CreateTask from "./CreateTask";
 
 class App extends Component {
   //dont need constructor and super bc theres no state or binding in this component
@@ -23,7 +24,8 @@ class App extends Component {
           <Route path="/users" exact component={Users} />
           <Route path="/users/without-tasks" component={UsersWithoutTasks} />
           <Route path="/users/:id" component={UserTasks} />
-          <Route path="/tasks" component={Tasks} />
+          <Route path="/tasks" exact component={Tasks} />
+          <Route path="/tasks/create" component={CreateTask} />
         </Switch>
       </div>
     ); // exact is needed above when there's other options behind the / or /users/

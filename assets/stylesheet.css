@@ -5,3 +5,8 @@ nav {
   display: flex;
   justify-content: space-around;
 }
+
+/* p.smallDescribe {
+  color: red;
+  font-size: 10px;
+} */
